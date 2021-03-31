@@ -6,10 +6,36 @@
 
 #import Notify
 import CommandFunctions.Notify as Notify 
+import discord
+
+AMOUNT_OF_BARS = 5
 
 # returns the xp for a user
 async def get_xp(message, other_words):
-	await message.channel.send("Getting xp...")
+	xpEmbed = discord.Embed(
+		title = "Your XP!",
+		description = "You have 800 xp",
+		colour = discord.Colour.light_gray()
+	)
+
+	# progres bar to next rank
+	current_xp = 80
+	needed_xp = 100
+	percentage_to_next_level = (current_xp/needed_xp)
+
+	# build the progress bar
+	bar = ""
+	for i in range(AMOUNT_OF_BARS):
+		if i/AMOUNT_OF_BARS < percentage_to_next_level:
+			bar += "🟩"
+		else:
+			bar += "⬜"
+
+	# add bar info to the embed
+	xpEmbed.add_field(name="Next rank", value="Trooper", inline=True)
+	xpEmbed.add_field(name="Progress", value=bar, inline=True)
+
+	await message.channel.send(embed=xpEmbed)
 
 
 # gives xp to a user
@@ -26,11 +52,11 @@ async def give_xp(message, other_words):
 	amount = other_words[0]
 
 	# typecheck
-
 	if not isinstance(amount, int):
 		await Notify.error(message, "The amount must be a number!")
 		return
 
+	# perform the give
 	other_words.remove(amount)
 	awardTo = other_words
 

@@ -1,12 +1,18 @@
-message = "!hello boomer"
-splitMessage = message.split(" ")
+current_xp = 80
+needed_xp = 100
+amount_of_bars = 5
 
-commandWordWithPrefix = splitMessage[0]
-len = len(splitMessage[0])
+percentage_to_next_level = (current_xp/needed_xp)
 
-command = commandWordWithPrefix[1:]
-print(command)
+print(percentage_to_next_level/5)
 
-splitMessage.remove(commandWordWithPrefix)
+print(percentage_to_next_level)
 
-print(splitMessage)
+str = ""
+for i in range(amount_of_bars):
+	if i/amount_of_bars < percentage_to_next_level:
+		str += "🟩"
+	else:
+		str += "⬜"
+
+print(str)
