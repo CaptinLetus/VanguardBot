@@ -7,7 +7,7 @@ commands = [
 ]
 
 # determine which command module should be run
-async def run_command(command, message, other_words):
+async def run_command(command, message, other_words):	
 	command = command.lower() # use a lowercase string for comparing
 
 	if command == "test1":
