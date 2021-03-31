@@ -4,5 +4,5 @@
 # Copyright (c) 2021 Letus Entertainment
 #
 
-async def run(message, otherWords):
+async def run(message, other_words):
 	print("XP run")

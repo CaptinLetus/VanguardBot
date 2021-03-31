@@ -26,14 +26,14 @@ async def on_message(message):
 	if message.author == client.user:
 			return
 
-	splitMessage = message.content.split(" ")
-	commandWordWithPrefix = splitMessage[0]
-	command = commandWordWithPrefix[1:]
+	split_message = message.content.split(" ")
+	command_word_with_prefix = split_message[0]
+	command = command_word_with_prefix[1:]
 
-	splitMessage.remove(commandWordWithPrefix)
+	split_message.remove(command_word_with_prefix)
 
 	# push heavy lifting off to the commands module
 	if message.content.startswith(prefix):
-		await Commands.runCommand(command, message, splitMessage)
+		await Commands.run_command(command, message, split_message)
 
 client.run("Njk2MTk0NTIxNTk1MjQ4NjUx.XolLrA.pAiKuEdrDnzU0Fwx0ScG3wurwl4")
