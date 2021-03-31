@@ -13,11 +13,11 @@ async def get_xp(message, other_words):
 async def give_xp(message, other_words):
 	# make sure the input is correct
 	if len(other_words) == 0:
-		await Notify.warn(message, "Please specify the amount of XP to award")
+		await Notify.error(message, "Please specify the amount of XP to award")
 		return
 
 	if len(other_words) == 1:
-		await Notify.warn(message, "Please mention the user(s) you want to give XP to")
+		await Notify.error(message, "Please mention the user(s) you want to give XP to")
 		return
 
 	request = other_words[0]

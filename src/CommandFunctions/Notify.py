@@ -16,7 +16,13 @@ async def warn(message, warning):
 		colour = discord.Colour.gold()
 	)
 
-	newEmbed.set_thumbnail(url=icon)
-	newEmbed.set_author(name="Vanguard Bot", icon_url=icon)
+	await message.channel.send(embed=newEmbed)
+
+async def error(message, warning): 
+	newEmbed = discord.Embed(
+		title = "Error!",
+		description = warning,
+		colour = discord.Colour.red()
+	)
 
 	await message.channel.send(embed=newEmbed)
