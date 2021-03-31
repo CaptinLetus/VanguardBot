@@ -1,3 +1,4 @@
-li = ["hi", "ok"]
-
-print(li[2])
+try :
+	print(int("ok"))
+except ValueError:
+	print("error")
