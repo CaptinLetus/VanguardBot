@@ -1,4 +1,5 @@
 import CommandFunctions.Test1 as Test1
+import CommandFunctions.XP as XP
 
 commands = [
 	"Test1",
@@ -6,8 +7,14 @@ commands = [
 ]
 
 # determine which command module should be run
-async def run_command(name, message, other_words):
-	name = name.lower() # use a lowercase string for comparing
+async def run_command(command, message, other_words):
+	command = command.lower() # use a lowercase string for comparing
 
-	if name == "test1":
+	if command == "test1":
 		await Test1.run(message, other_words)
+
+	if command == "givexp":
+		await XP.give_xp(message, other_words)
+
+	if command == "xp":
+		await XP.get_xp(message, other_words)

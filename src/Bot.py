@@ -36,4 +36,6 @@ async def on_message(message):
 	if message.content.startswith(prefix):
 		await Commands.run_command(command, message, split_message)
 
-client.run("Njk2MTk0NTIxNTk1MjQ4NjUx.XolLrA.pAiKuEdrDnzU0Fwx0ScG3wurwl4")
+# don't run with unit tests
+if __name__ == '__main__':
+	client.run("Njk2MTk0NTIxNTk1MjQ4NjUx.XolLrA.pAiKuEdrDnzU0Fwx0ScG3wurwl4")
