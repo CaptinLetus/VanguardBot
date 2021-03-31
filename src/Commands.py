@@ -17,4 +17,4 @@ async def run_command(command, message, other_words):
 		await XP.give_xp(message, other_words)
 
 	if command == "xp":
-		await XP.get_xp(message, other_words)
+		await XP.print_xp(message, other_words)
