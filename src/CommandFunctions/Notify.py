@@ -9,6 +9,7 @@ import discord
 
 icon = "https://cdn.discordapp.com/attachments/811651953657774130/826796628462927872/CaptinLetusGroupLogo.png"
 
+# creates a gold embed displaying a warning
 async def warn(message, warning): 
 	newEmbed = discord.Embed(
 		title = "Warning!",
@@ -18,6 +19,7 @@ async def warn(message, warning):
 
 	await message.channel.send(embed=newEmbed)
 
+# creates a red embed displaying an error
 async def error(message, warning): 
 	newEmbed = discord.Embed(
 		title = "Error!",
