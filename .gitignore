@@ -4,3 +4,4 @@
 src/Test.py
 src/Test.py
 *.pyc
+src/Secrets.py

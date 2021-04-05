@@ -7,6 +7,7 @@
 
 from discord.ext import commands
 import os
+import Secrets
 
 PREFIX = "!"
 client = commands.Bot(command_prefix = PREFIX)
@@ -23,4 +24,4 @@ if __name__ == '__main__':
 		if filename.endswith(".py"):
 			client.load_extension(f"cogs.{filename[:-3]}")
 
-	client.run("Njk2MTk0NTIxNTk1MjQ4NjUx.XolLrA.pAiKuEdrDnzU0Fwx0ScG3wurwl4")
+	client.run(Secrets.getToken())
