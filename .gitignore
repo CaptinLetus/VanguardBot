@@ -3,5 +3,7 @@
 *.pyc
 src/Test.py
 src/Test.py
+.vscode
+__pycache__
 *.pyc
 src/Secrets.py
