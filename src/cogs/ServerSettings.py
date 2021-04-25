@@ -54,7 +54,7 @@ class ServerSettings(commands.Cog):
 	async def updateGroupId(self, ctx, groupId : int):
 
 		set_group_id(ctx.message.guild.id, groupId)
-		serverId, newGroupId = get_server_info(ctx.message.guild.id)
+		_, newGroupId = get_server_info(ctx.message.guild.id)
 		await ctx.send("GroupID has been updated to " + str(newGroupId))
 	
 	@commands.command()
